@@ -2,178 +2,166 @@
 <html lang="ko">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>서비스 포털 - 독후감 기록 및 AI 닮은꼴 찾기 서비스</title>
-  <meta name="description"
-    content="독후감 기록 서비스와 AI 기반 주토피아 캐릭터 닮은꼴 찾기를 제공하는 통합 서비스 포털입니다. 읽은 책을 기록하고 나만의 독서 노트를 만들어보세요.">
-  <meta name="keywords" content="독후감, 독서 기록, 책 리뷰, AI 얼굴 분석, 주토피아, 닮은꼴, 캐릭터 분석, 독서 노트">
-  <meta name="author" content="서비스 포털">
-  <link rel="canonical" href="https://yourwebsite.com/">
-
-  <!-- Open Graph 메타 태그 -->
-  <meta property="og:title" content="서비스 포털 - 독후감 기록 및 AI 닮은꼴 찾기">
-  <meta property="og:description" content="독후감 기록 서비스와 AI 기반 주토피아 캐릭터 닮은꼴 찾기를 제공하는 통합 서비스 포털입니다.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yourwebsite.com/">
-  <meta property="og:locale" content="ko_KR">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="서비스 포털 - 독후감 기록 및 AI 닮은꼴 찾기">
-  <meta name="twitter:description" content="독후감 기록 서비스와 AI 기반 주토피아 캐릭터 닮은꼴 찾기를 제공하는 통합 서비스 포털입니다.">
-
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동물 닮은꼴 테스트</title>
+    <meta name="description" content="사진을 업로드하면 동물 이미지와의 유사도를 간단히 확인할 수 있는 동물 닮은꼴 테스트입니다.">
+    <meta property="og:title" content="동물 닮은꼴 테스트">
+    <meta property="og:description" content="사진을 업로드하면 동물 이미지와의 유사도를 간단히 확인할 수 있어요.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ko_KR">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- 네비게이션 바 -->
-  <nav role="navigation" aria-label="주 메뉴">
-    <div class="nav-container">
-      <a href="/" class="nav-brand">🎯 서비스 포털</a>
-      <ul class="nav-menu">
-        <li><a href="/" class="nav-link active">홈</a></li>
-        <li><a href="book-review.html" class="nav-link">독후감 기록</a></li>
-        <li><a href="zootopia.html" class="nav-link">닮은꼴 찾기</a></li>
-        <li><a href="about.html" class="nav-link">소개</a></li>
-      </ul>
+    <div class="container">
+        <header class="site-header">
+            <div class="brand">
+                <h1>동물 닮은꼴 테스트</h1>
+                <p class="subtitle">사진 한 장으로 간단하게, 나와 비슷한 동물을 찾아보세요.</p>
+            </div>
+            <nav class="site-nav" aria-label="주요 메뉴">
+                <a href="index.html">홈</a>
+                <a href="#guide">서비스 소개</a>
+                <a href="#faq">FAQ</a>
+                <a href="about.html">About</a>
+                <a href="privacy.html">개인정보처리방침</a>
+                <a href="terms.html">이용약관</a>
+                <a href="contact.html">연락처</a>
+            </nav>
+        </header>
+
+        <section class="animal-preview" aria-label="결과로 나올 수 있는 동물 미리보기">
+            <h2 class="animal-preview-title">결과로 나올 수 있는 동물</h2>
+            <div class="animal-preview-list">
+                <figure class="animal-preview-item">
+                    <img src="assets/character-fox.png" alt="여우" loading="lazy">
+                    <figcaption>여우</figcaption>
+                </figure>
+                <figure class="animal-preview-item">
+                    <img src="assets/character-rabbit.png" alt="토끼" loading="lazy">
+                    <figcaption>토끼</figcaption>
+                </figure>
+                <figure class="animal-preview-item">
+                    <img src="assets/character-owl.png" alt="부엉이" loading="lazy">
+                    <figcaption>부엉이</figcaption>
+                </figure>
+                <figure class="animal-preview-item">
+                    <img src="assets/character-tiger.png" alt="호랑이" loading="lazy">
+                    <figcaption>호랑이</figcaption>
+                </figure>
+                <figure class="animal-preview-item">
+                    <img src="assets/character-deer.png" alt="사슴" loading="lazy">
+                    <figcaption>사슴</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <main>
+            <noscript>
+                <div class="notice">
+                    이 서비스는 자바스크립트가 필요합니다. 브라우저 설정에서 자바스크립트를 활성화해주세요.
+                </div>
+            </noscript>
+
+            <section class="info-section" id="guide">
+                <h2>서비스 소개</h2>
+                <p>
+                    동물 닮은꼴 테스트는 업로드한 사진을 기반으로 간단한 이미지 유사도를 계산해
+                    비슷한 분위기의 동물 결과를 보여주는 웹 도구입니다. 모든 처리는 브라우저에서
+                    수행되며, 사진은 서버에 저장되지 않습니다.
+                </p>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>사용 방법</h3>
+                        <ol>
+                            <li>이미지를 업로드합니다.</li>
+                            <li>유사도 결과를 확인합니다.</li>
+                        </ol>
+                    </div>
+                    <div class="info-card">
+                        <h3>알려드릴 점</h3>
+                        <ul>
+                            <li>결과는 참고용이며 정확도를 보장하지 않습니다.</li>
+                            <li>업로드한 사진은 저장/전송하지 않습니다.</li>
+                            <li>얼굴이 잘 보이는 사진을 권장합니다.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="upload-section" id="upload-section">
+                <h2>사진 업로드</h2>
+                <div id="drop-zone" class="drop-zone">
+                    <div class="drop-zone-content">
+                        <div class="upload-icon">📸</div>
+                        <p class="drop-zone-text">이미지를 드래그하거나 클릭하여 업로드하세요</p>
+                        <p class="drop-zone-hint">JPG, PNG 파일만 지원됩니다</p>
+                        <input type="file" id="file-input" accept="image/jpeg,image/png,image/jpg" hidden>
+                        <button type="button" id="upload-button" class="upload-button">파일 선택</button>
+                    </div>
+                </div>
+
+                <!-- Preview removed: analysis starts automatically on upload -->
+            </section>
+
+            <div id="loading" class="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>AI가 분석 중입니다...</p>
+            </div>
+
+            <div id="result-section" class="result-section" style="display: none;">
+                <h2>당신과 닮은 동물 TOP 3</h2>
+                <div id="results-container" class="results-container"></div>
+                <button type="button" id="try-again-button" class="try-again-button">다시 해보기</button>
+            </div>
+
+            <div id="error-message" class="error-message" style="display: none;">
+                <p id="error-text"></p>
+            </div>
+
+            <section class="info-section" id="faq">
+                <h2>자주 묻는 질문</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h3>사진이 저장되나요?</h3>
+                        <p>아니요. 업로드한 사진은 브라우저에서만 처리되며 서버로 전송되지 않습니다.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>결과가 정확한가요?</h3>
+                        <p>참고용 결과이며, 조명/각도/화질에 따라 달라질 수 있습니다.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>지원되는 파일 형식은?</h3>
+                        <p>JPG, PNG 형식을 지원하며 10MB 이하의 파일만 업로드 가능합니다.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="notice-section">
+                <h2>안내</h2>
+                <p>
+                    본 서비스는 재미를 위한 간단한 테스트입니다. 특정 결과를 보장하지 않으며,
+                    민감한 정보가 포함된 사진은 업로드하지 않는 것을 권장합니다.
+                </p>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="privacy.html">개인정보처리방침</a>
+                <a href="terms.html">이용약관</a>
+                <a href="contact.html">연락처</a>
+            </div>
+            <p>2026 동물 닮은꼴 테스트</p>
+        </footer>
     </div>
-  </nav>
 
-  <main id="main-content">
-    <div class="landing-header">
-      <h1>환영합니다!</h1>
-      <p>독서 기록부터 AI 분석까지, 여러분의 일상을 더 풍요롭게 만들어줄 다양한 서비스를 제공합니다.</p>
-    </div>
-
-    <!-- 서비스 소개 섹션 -->
-    <section class="intro-section">
-      <h2>우리 서비스의 특징</h2>
-      <p>서비스 포털은 사용자의 창의성과 자기 표현을 돕기 위해 만들어진 플랫폼입니다. 모든 서비스는 무료로 이용 가능하며, 사용자의 개인정보를 안전하게 보호합니다.</p>
-      <ul style="text-align: left; max-width: 600px; margin: 1rem auto; line-height: 1.8;">
-        <li><strong>독후감 기록:</strong> 읽은 책을 체계적으로 관리하고, 독서 습관을 길러보세요</li>
-        <li><strong>AI 닮은꼴 찾기:</strong> 최신 AI 기술로 재미있는 캐릭터 매칭을 경험하세요</li>
-        <li><strong>간편한 사용:</strong> 복잡한 가입 절차 없이 바로 이용 가능합니다</li>
-        <li><strong>개인정보 보호:</strong> 업로드된 데이터는 저장되지 않으며 즉시 삭제됩니다</li>
-      </ul>
-    </section>
-
-    <div class="services-container">
-      <!-- 독후감 서비스 -->
-      <div class="service-card">
-        <div class="service-icon">📚</div>
-        <h2>독후감 기록 서비스</h2>
-        <p>읽은 책에 대한 소감을 기록하고 관리하세요. 나만의 독서 노트를 만들어보세요!</p>
-        <a href="book-review.html" class="btn btn-primary">
-          독후감 작성하기
-        </a>
-      </div>
-
-      <!-- 주토피아 서비스 -->
-      <div class="service-card">
-        <div class="service-icon">🦊</div>
-        <h2>주토피아 닮은 꼴 찾기</h2>
-        <p>AI가 당신의 얼굴을 분석해서 어떤 주토피아 캐릭터와 닮았는지 알려드립니다!</p>
-        <a href="zootopia.html" class="btn btn-primary">
-          닮은 꼴 찾기
-        </a>
-      </div>
-    </div>
-
-    <!-- FAQ 섹션 -->
-    <section class="intro-section">
-      <h2>자주 묻는 질문 (FAQ)</h2>
-
-      <div style="text-align: left; max-width: 800px; margin: 1.5rem auto;">
-        <details style="margin-bottom: 1rem; padding: 1rem; border: 1px solid var(--border-color); border-radius: 8px;">
-          <summary style="cursor: pointer; font-weight: 600; color: var(--primary-color); font-size: 1.1rem;">서비스는
-            무료인가요?</summary>
-          <p style="margin-top: 1rem; color: var(--text-color); line-height: 1.7;">네, 모든 서비스는 완전히 무료로 이용하실 수 있습니다.
-            회원가입이나 결제 없이 바로 사용 가능합니다.</p>
-        </details>
-
-        <details style="margin-bottom: 1rem; padding: 1rem; border: 1px solid var(--border-color); border-radius: 8px;">
-          <summary style="cursor: pointer; font-weight: 600; color: var(--primary-color); font-size: 1.1rem;">내 데이터는
-            안전한가요?</summary>
-          <p style="margin-top: 1rem; color: var(--text-color); line-height: 1.7;">독후감 데이터는 브라우저의 로컬 스토리지에만 저장되며, 서버로
-            전송되지 않습니다. 주토피아 닮은꼴 찾기 서비스의 이미지도 브라우저에서만 처리되고 즉시 삭제됩니다.</p>
-        </details>
-
-        <details style="margin-bottom: 1rem; padding: 1rem; border: 1px solid var(--border-color); border-radius: 8px;">
-          <summary style="cursor: pointer; font-weight: 600; color: var(--primary-color); font-size: 1.1rem;">독후감을 다른
-            기기에서도 볼 수 있나요?</summary>
-          <p style="margin-top: 1rem; color: var(--text-color); line-height: 1.7;">독후감은 브라우저 로컬 스토리지에 저장되므로, 같은 브라우저와
-            기기에서만 확인할 수 있습니다. 다른 기기에서 보려면 데이터를 수동으로 백업하셔야 합니다.</p>
-        </details>
-
-        <details style="margin-bottom: 1rem; padding: 1rem; border: 1px solid var(--border-color); border-radius: 8px;">
-          <summary style="cursor: pointer; font-weight: 600; color: var(--primary-color); font-size: 1.1rem;">AI 닮은꼴 찾기의
-            정확도는 어느 정도인가요?</summary>
-          <p style="margin-top: 1rem; color: var(--text-color); line-height: 1.7;">TensorFlow.js 기반의 머신러닝 모델을 사용하여 얼굴
-            특징을 분석합니다. 다만 이는 엔터테인먼트 목적이며, 100% 정확도를 보장하지는 않습니다. 재미있게 즐겨주세요!</p>
-        </details>
-
-        <details style="margin-bottom: 1rem; padding: 1rem; border: 1px solid var(--border-color); border-radius: 8px;">
-          <summary style="cursor: pointer; font-weight: 600; color: var(--primary-color); font-size: 1.1rem;">회원가입이
-            필요한가요?</summary>
-          <p style="margin-top: 1rem; color: var(--text-color); line-height: 1.7;">아니오, 회원가입 없이 모든 서비스를 바로 이용하실 수 있습니다.
-            복잡한 절차 없이 간편하게 사용하세요.</p>
-        </details>
-
-        <details style="margin-bottom: 1rem; padding: 1rem; border: 1px solid var(--border-color); border-radius: 8px;">
-          <summary style="cursor: pointer; font-weight: 600; color: var(--primary-color); font-size: 1.1rem;">브라우저 데이터를
-            삭제하면 독후감도 삭제되나요?</summary>
-          <p style="margin-top: 1rem; color: var(--text-color); line-height: 1.7;">네, 브라우저의 캐시나 쿠키, 로컬 스토리지를 삭제하면 독후감
-            데이터도 함께 삭제됩니다. 중요한 독후감은 별도로 백업해두시는 것을 권장합니다.</p>
-        </details>
-
-        <details style="margin-bottom: 1rem; padding: 1rem; border: 1px solid var(--border-color); border-radius: 8px;">
-          <summary style="cursor: pointer; font-weight: 600; color: var(--primary-color); font-size: 1.1rem;">모바일에서도 사용할
-            수 있나요?</summary>
-          <p style="margin-top: 1rem; color: var(--text-color); line-height: 1.7;">네, 모든 서비스는 반응형으로 디자인되어 PC, 태블릿, 스마트폰
-            등 모든 기기에서 최적화된 화면으로 이용하실 수 있습니다.</p>
-        </details>
-      </div>
-    </section>
-
-    <!-- 문의 섹션 -->
-    <section class="contact-section">
-      <h2>문의하기</h2>
-      <p>서비스에 대한 문의사항이나 피드백을 보내주세요.</p>
-      <form id="contactForm" action="https://formspree.io/f/xzboqlol" method="POST">
-        <div class="form-group">
-          <label for="contactName">이름 *</label>
-          <input type="text" id="contactName" name="name" placeholder="이름을 입력하세요" required>
-        </div>
-
-        <div class="form-group">
-          <label for="contactEmail">이메일 *</label>
-          <input type="email" id="contactEmail" name="email" placeholder="이메일을 입력하세요" required>
-        </div>
-
-        <div class="form-group">
-          <label for="contactMessage">문의 내용 *</label>
-          <textarea id="contactMessage" name="message" placeholder="문의 내용을 입력하세요" rows="5" required></textarea>
-        </div>
-
-        <div class="form-actions">
-          <button type="submit" class="btn btn-primary">문의 보내기</button>
-        </div>
-      </form>
-    </section>
-  </main>
-
-  <!-- 테마 토글 버튼 -->
-  <button id="themeToggle" class="theme-toggle" aria-label="테마 전환">
-    <span id="themeIcon">🌙</span>
-  </button>
-
-  <footer>
-    <p>© 2026 서비스 포털 | <a href="terms.html" style="color: white; text-decoration: underline;">이용약관</a> | <a
-        href="privacy.html" style="color: white; text-decoration: underline;">개인정보처리방침</a></p>
-  </footer>
-
-  <script src="main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
