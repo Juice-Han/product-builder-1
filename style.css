@@ -1,4 +1,4 @@
-/* CSS 변수 정의 */
+/* CSS 변수 정의 - 라이트 모드 */
 :root {
     --primary-color: #4A90E2;
     --secondary-color: #757575;
@@ -13,6 +13,22 @@
     --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.15);
     --transition: all 0.3s ease;
+}
+
+/* 다크 모드 변수 */
+[data-theme="dark"] {
+    --primary-color: #5BA3F5;
+    --secondary-color: #B0B0B0;
+    --success-color: #66BB6A;
+    --danger-color: #EF5350;
+    --warning-color: #FFA726;
+    --background-color: #1A1A1A;
+    --card-background: #2D2D2D;
+    --text-color: #E0E0E0;
+    --text-light: #B0B0B0;
+    --border-color: #404040;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 /* 전역 스타일 */
@@ -419,4 +435,44 @@ footer p {
 
 .review-card {
     animation: fadeIn 0.3s ease-out;
+}
+
+/* 테마 토글 버튼 */
+.theme-toggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--shadow-hover);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    z-index: 1000;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1) rotate(20deg);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+    .theme-toggle {
+        width: 50px;
+        height: 50px;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        font-size: 1.25rem;
+    }
 }

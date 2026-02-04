@@ -4,6 +4,52 @@ let isEditMode = false;
 let editingId = null;
 
 const STORAGE_KEY = 'bookReviews';
+const THEME_KEY = 'bookReviewsTheme';
+
+// ==================== 테마 관리 함수 ====================
+
+/**
+ * 현재 테마 가져오기
+ */
+function getCurrentTheme() {
+    return localStorage.getItem(THEME_KEY) || 'light';
+}
+
+/**
+ * 테마 설정 및 저장
+ */
+function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem(THEME_KEY, theme);
+    updateThemeIcon(theme);
+}
+
+/**
+ * 테마 아이콘 업데이트
+ */
+function updateThemeIcon(theme) {
+    const themeIcon = document.getElementById('themeIcon');
+    if (themeIcon) {
+        themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+    }
+}
+
+/**
+ * 테마 토글
+ */
+function toggleTheme() {
+    const currentTheme = getCurrentTheme();
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+}
+
+/**
+ * 테마 초기화
+ */
+function initializeTheme() {
+    const savedTheme = getCurrentTheme();
+    setTheme(savedTheme);
+}
 
 // ==================== 데이터 관리 함수 ====================
 
@@ -419,6 +465,12 @@ function setupEventListeners() {
         clearAllBtn.addEventListener('click', handleClearAll);
     }
 
+    // 테마 토글 버튼
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+
     // 입력 시 실시간 오류 제거
     ['title', 'author', 'content'].forEach(field => {
         const element = document.getElementById(field);
@@ -439,6 +491,9 @@ function setupEventListeners() {
  */
 function initializeApp() {
     console.log('독후감 서비스를 시작합니다...');
+
+    // 테마 초기화
+    initializeTheme();
 
     // localStorage에서 데이터 로드
     reviews = getReviewsFromStorage();
