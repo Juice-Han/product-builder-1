@@ -3,131 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>독후감 기록 서비스</title>
+    <title>서비스 선택</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: var(--card-background);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary-color);
+        }
+
+        .service-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .service-card .btn {
+            width: 100%;
+        }
+
+        .landing-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .landing-header h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .landing-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>📚 독후감 기록 서비스</h1>
-        <p>읽은 책에 대한 소감을 기록하고 관리하세요</p>
+        <h1>🎯 서비스 포털</h1>
+        <p>원하시는 서비스를 선택해주세요</p>
     </header>
 
     <main>
-        <!-- 독후감 입력 폼 -->
-        <section class="form-section">
-            <h2 id="formTitle">새 독후감 작성</h2>
-            <form id="reviewForm">
+        <div class="landing-header">
+            <h1>환영합니다!</h1>
+            <p>다양한 서비스를 이용하실 수 있습니다.</p>
+        </div>
+
+        <div class="services-container">
+            <!-- 독후감 서비스 -->
+            <div class="service-card">
+                <div class="service-icon">📚</div>
+                <h2>독후감 기록 서비스</h2>
+                <p>읽은 책에 대한 소감을 기록하고 관리하세요. 나만의 독서 노트를 만들어보세요!</p>
+                <a href="book-review.html" class="btn btn-primary">
+                    독후감 작성하기
+                </a>
+            </div>
+
+            <!-- 주토피아 서비스 -->
+            <div class="service-card">
+                <div class="service-icon">🦊</div>
+                <h2>주토피아 닮은 꼴 찾기</h2>
+                <p>AI가 당신의 얼굴을 분석해서 어떤 주토피아 캐릭터와 닮았는지 알려드립니다!</p>
+                <a href="zootopia.html" class="btn btn-primary">
+                    닮은 꼴 찾기
+                </a>
+            </div>
+        </div>
+
+        <!-- 문의 섹션 -->
+        <section class="contact-section">
+            <h2>문의하기</h2>
+            <p>서비스에 대한 문의사항이나 피드백을 보내주세요.</p>
+            <form id="contactForm" action="https://formspree.io/f/xzboqlol" method="POST">
                 <div class="form-group">
-                    <label for="title">책 제목 *</label>
+                    <label for="contactName">이름 *</label>
                     <input
                         type="text"
-                        id="title"
-                        name="title"
-                        placeholder="책 제목을 입력하세요"
-                        maxlength="100"
+                        id="contactName"
+                        name="name"
+                        placeholder="이름을 입력하세요"
                         required
                     >
-                    <span class="error-message" id="titleError"></span>
                 </div>
 
                 <div class="form-group">
-                    <label for="author">저자 *</label>
+                    <label for="contactEmail">이메일 *</label>
                     <input
-                        type="text"
-                        id="author"
-                        name="author"
-                        placeholder="저자명을 입력하세요"
-                        maxlength="100"
+                        type="email"
+                        id="contactEmail"
+                        name="email"
+                        placeholder="이메일을 입력하세요"
                         required
                     >
-                    <span class="error-message" id="authorError"></span>
                 </div>
 
                 <div class="form-group">
-                    <label for="content">독후감 *</label>
+                    <label for="contactMessage">문의 내용 *</label>
                     <textarea
-                        id="content"
-                        name="content"
-                        placeholder="책을 읽고 느낀 점을 자유롭게 작성하세요 (최소 10자)"
-                        rows="8"
+                        id="contactMessage"
+                        name="message"
+                        placeholder="문의 내용을 입력하세요"
+                        rows="5"
                         required
                     ></textarea>
-                    <span class="error-message" id="contentError"></span>
                 </div>
 
-                <input type="hidden" id="editId" value="">
-
                 <div class="form-actions">
-                    <button type="submit" id="submitBtn" class="btn btn-primary">독후감 추가</button>
-                    <button type="button" id="cancelBtn" class="btn btn-secondary" style="display: none;">취소</button>
+                    <button type="submit" class="btn btn-primary">문의 보내기</button>
                 </div>
             </form>
         </section>
-
-        <!-- 독후감 목록 -->
-        <section class="reviews-section">
-            <div class="reviews-header">
-                <h2>저장된 독후감</h2>
-                <div class="stats-bar">
-                    <span class="review-count">총 <strong id="reviewCount">0</strong>개</span>
-                    <button id="clearAllBtn" class="btn btn-danger" style="display: none;">전체 삭제</button>
-                </div>
-            </div>
-
-            <div id="reviewsList" class="reviews-list">
-                <!-- 독후감 카드들이 여기에 동적으로 추가됩니다 -->
-            </div>
-
-            <div id="emptyState" class="empty-state">
-                <p>아직 작성된 독후감이 없습니다.</p>
-                <p>첫 번째 독후감을 작성해보세요!</p>
-            </div>
-        </section>
     </main>
-
-    <!-- 문의 섹션 -->
-    <section class="contact-section">
-        <h2>문의하기</h2>
-        <p>서비스에 대한 문의사항이나 피드백을 보내주세요.</p>
-        <form id="contactForm" action="https://formspree.io/f/xzboqlol" method="POST">
-            <div class="form-group">
-                <label for="contactName">이름 *</label>
-                <input
-                    type="text"
-                    id="contactName"
-                    name="name"
-                    placeholder="이름을 입력하세요"
-                    required
-                >
-            </div>
-
-            <div class="form-group">
-                <label for="contactEmail">이메일 *</label>
-                <input
-                    type="email"
-                    id="contactEmail"
-                    name="email"
-                    placeholder="이메일을 입력하세요"
-                    required
-                >
-            </div>
-
-            <div class="form-group">
-                <label for="contactMessage">문의 내용 *</label>
-                <textarea
-                    id="contactMessage"
-                    name="message"
-                    placeholder="문의 내용을 입력하세요"
-                    rows="5"
-                    required
-                ></textarea>
-            </div>
-
-            <div class="form-actions">
-                <button type="submit" class="btn btn-primary">문의 보내기</button>
-            </div>
-        </form>
-    </section>
 
     <!-- 테마 토글 버튼 -->
     <button id="themeToggle" class="theme-toggle" aria-label="테마 전환">
@@ -135,9 +152,50 @@
     </button>
 
     <footer>
-        <p>© 2026 독후감 기록 서비스</p>
+        <p>© 2026 서비스 포털</p>
     </footer>
 
-    <script src="main.js"></script>
+    <script>
+        // 테마 관리
+        const THEME_KEY = 'mainTheme';
+
+        function getCurrentTheme() {
+            return localStorage.getItem(THEME_KEY) || 'light';
+        }
+
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem(THEME_KEY, theme);
+            updateThemeIcon(theme);
+        }
+
+        function updateThemeIcon(theme) {
+            const themeIcon = document.getElementById('themeIcon');
+            if (themeIcon) {
+                themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+            }
+        }
+
+        function toggleTheme() {
+            const currentTheme = getCurrentTheme();
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            setTheme(newTheme);
+        }
+
+        function initializeTheme() {
+            const savedTheme = getCurrentTheme();
+            setTheme(savedTheme);
+        }
+
+        // 이벤트 리스너
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeTheme();
+
+            const themeToggle = document.getElementById('themeToggle');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', toggleTheme);
+            }
+        });
+    </script>
 </body>
 </html>
