@@ -4,84 +4,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>서비스 선택</title>
+  <title>서비스 포털 - 독후감 기록 및 AI 닮은꼴 찾기 서비스</title>
+  <meta name="description"
+    content="독후감 기록 서비스와 AI 기반 주토피아 캐릭터 닮은꼴 찾기를 제공하는 통합 서비스 포털입니다. 읽은 책을 기록하고 나만의 독서 노트를 만들어보세요.">
+  <meta name="keywords" content="독후감, 독서 기록, 책 리뷰, AI 얼굴 분석, 주토피아, 닮은꼴, 캐릭터 분석, 독서 노트">
+  <meta name="author" content="서비스 포털">
+  <link rel="canonical" href="https://yourwebsite.com/">
+
+  <!-- Open Graph 메타 태그 -->
+  <meta property="og:title" content="서비스 포털 - 독후감 기록 및 AI 닮은꼴 찾기">
+  <meta property="og:description" content="독후감 기록 서비스와 AI 기반 주토피아 캐릭터 닮은꼴 찾기를 제공하는 통합 서비스 포털입니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourwebsite.com/">
+  <meta property="og:locale" content="ko_KR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="서비스 포털 - 독후감 기록 및 AI 닮은꼴 찾기">
+  <meta name="twitter:description" content="독후감 기록 서비스와 AI 기반 주토피아 캐릭터 닮은꼴 찾기를 제공하는 통합 서비스 포털입니다.">
+
   <link rel="stylesheet" href="style.css">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1046661021794259"
-    crossorigin="anonymous"></script>
-  <style>
-    .services-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .service-card {
-      background: var(--card-background);
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      padding: 2rem;
-      text-align: center;
-      transition: var(--transition);
-      border: 2px solid transparent;
-    }
-
-    .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-hover);
-      border-color: var(--primary-color);
-    }
-
-    .service-icon {
-      font-size: 4rem;
-      margin-bottom: 1rem;
-    }
-
-    .service-card h2 {
-      color: var(--primary-color);
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
-    }
-
-    .service-card p {
-      color: var(--text-light);
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-    }
-
-    .service-card .btn {
-      width: 100%;
-    }
-
-    .landing-header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    .landing-header h1 {
-      color: var(--primary-color);
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .landing-header p {
-      color: var(--text-light);
-      font-size: 1.1rem;
-    }
-  </style>
 </head>
 
 <body>
-  <header>
-    <h1>🎯 서비스 포털</h1>
-    <p>원하시는 서비스를 선택해주세요</p>
-  </header>
+  <!-- 네비게이션 바 -->
+  <nav role="navigation" aria-label="주 메뉴">
+    <div class="nav-container">
+      <a href="/" class="nav-brand">🎯 서비스 포털</a>
+      <ul class="nav-menu">
+        <li><a href="/" class="nav-link active">홈</a></li>
+        <li><a href="book-review.html" class="nav-link">독후감 기록</a></li>
+        <li><a href="zootopia.html" class="nav-link">닮은꼴 찾기</a></li>
+        <li><a href="about.html" class="nav-link">소개</a></li>
+      </ul>
+    </div>
+  </nav>
 
-  <main>
+  <main id="main-content">
     <div class="landing-header">
       <h1>환영합니다!</h1>
-      <p>다양한 서비스를 이용하실 수 있습니다.</p>
+      <p>독서 기록부터 AI 분석까지, 여러분의 일상을 더 풍요롭게 만들어줄 다양한 서비스를 제공합니다.</p>
     </div>
+
+    <!-- 서비스 소개 섹션 -->
+    <section class="intro-section">
+      <h2>우리 서비스의 특징</h2>
+      <p>서비스 포털은 사용자의 창의성과 자기 표현을 돕기 위해 만들어진 플랫폼입니다. 모든 서비스는 무료로 이용 가능하며, 사용자의 개인정보를 안전하게 보호합니다.</p>
+      <ul style="text-align: left; max-width: 600px; margin: 1rem auto; line-height: 1.8;">
+        <li><strong>독후감 기록:</strong> 읽은 책을 체계적으로 관리하고, 독서 습관을 길러보세요</li>
+        <li><strong>AI 닮은꼴 찾기:</strong> 최신 AI 기술로 재미있는 캐릭터 매칭을 경험하세요</li>
+        <li><strong>간편한 사용:</strong> 복잡한 가입 절차 없이 바로 이용 가능합니다</li>
+        <li><strong>개인정보 보호:</strong> 업로드된 데이터는 저장되지 않으며 즉시 삭제됩니다</li>
+      </ul>
+    </section>
 
     <div class="services-container">
       <!-- 독후감 서비스 -->
@@ -104,6 +79,62 @@
         </a>
       </div>
     </div>
+
+    <!-- FAQ 섹션 -->
+    <section class="intro-section">
+      <h2>자주 묻는 질문 (FAQ)</h2>
+
+      <div style="text-align: left; max-width: 800px; margin: 1.5rem auto;">
+        <details style="margin-bottom: 1rem; padding: 1rem; border: 1px solid var(--border-color); border-radius: 8px;">
+          <summary style="cursor: pointer; font-weight: 600; color: var(--primary-color); font-size: 1.1rem;">서비스는
+            무료인가요?</summary>
+          <p style="margin-top: 1rem; color: var(--text-color); line-height: 1.7;">네, 모든 서비스는 완전히 무료로 이용하실 수 있습니다.
+            회원가입이나 결제 없이 바로 사용 가능합니다.</p>
+        </details>
+
+        <details style="margin-bottom: 1rem; padding: 1rem; border: 1px solid var(--border-color); border-radius: 8px;">
+          <summary style="cursor: pointer; font-weight: 600; color: var(--primary-color); font-size: 1.1rem;">내 데이터는
+            안전한가요?</summary>
+          <p style="margin-top: 1rem; color: var(--text-color); line-height: 1.7;">독후감 데이터는 브라우저의 로컬 스토리지에만 저장되며, 서버로
+            전송되지 않습니다. 주토피아 닮은꼴 찾기 서비스의 이미지도 브라우저에서만 처리되고 즉시 삭제됩니다.</p>
+        </details>
+
+        <details style="margin-bottom: 1rem; padding: 1rem; border: 1px solid var(--border-color); border-radius: 8px;">
+          <summary style="cursor: pointer; font-weight: 600; color: var(--primary-color); font-size: 1.1rem;">독후감을 다른
+            기기에서도 볼 수 있나요?</summary>
+          <p style="margin-top: 1rem; color: var(--text-color); line-height: 1.7;">독후감은 브라우저 로컬 스토리지에 저장되므로, 같은 브라우저와
+            기기에서만 확인할 수 있습니다. 다른 기기에서 보려면 데이터를 수동으로 백업하셔야 합니다.</p>
+        </details>
+
+        <details style="margin-bottom: 1rem; padding: 1rem; border: 1px solid var(--border-color); border-radius: 8px;">
+          <summary style="cursor: pointer; font-weight: 600; color: var(--primary-color); font-size: 1.1rem;">AI 닮은꼴 찾기의
+            정확도는 어느 정도인가요?</summary>
+          <p style="margin-top: 1rem; color: var(--text-color); line-height: 1.7;">TensorFlow.js 기반의 머신러닝 모델을 사용하여 얼굴
+            특징을 분석합니다. 다만 이는 엔터테인먼트 목적이며, 100% 정확도를 보장하지는 않습니다. 재미있게 즐겨주세요!</p>
+        </details>
+
+        <details style="margin-bottom: 1rem; padding: 1rem; border: 1px solid var(--border-color); border-radius: 8px;">
+          <summary style="cursor: pointer; font-weight: 600; color: var(--primary-color); font-size: 1.1rem;">회원가입이
+            필요한가요?</summary>
+          <p style="margin-top: 1rem; color: var(--text-color); line-height: 1.7;">아니오, 회원가입 없이 모든 서비스를 바로 이용하실 수 있습니다.
+            복잡한 절차 없이 간편하게 사용하세요.</p>
+        </details>
+
+        <details style="margin-bottom: 1rem; padding: 1rem; border: 1px solid var(--border-color); border-radius: 8px;">
+          <summary style="cursor: pointer; font-weight: 600; color: var(--primary-color); font-size: 1.1rem;">브라우저 데이터를
+            삭제하면 독후감도 삭제되나요?</summary>
+          <p style="margin-top: 1rem; color: var(--text-color); line-height: 1.7;">네, 브라우저의 캐시나 쿠키, 로컬 스토리지를 삭제하면 독후감
+            데이터도 함께 삭제됩니다. 중요한 독후감은 별도로 백업해두시는 것을 권장합니다.</p>
+        </details>
+
+        <details style="margin-bottom: 1rem; padding: 1rem; border: 1px solid var(--border-color); border-radius: 8px;">
+          <summary style="cursor: pointer; font-weight: 600; color: var(--primary-color); font-size: 1.1rem;">모바일에서도 사용할
+            수 있나요?</summary>
+          <p style="margin-top: 1rem; color: var(--text-color); line-height: 1.7;">네, 모든 서비스는 반응형으로 디자인되어 PC, 태블릿, 스마트폰
+            등 모든 기기에서 최적화된 화면으로 이용하실 수 있습니다.</p>
+        </details>
+      </div>
+    </section>
 
     <!-- 문의 섹션 -->
     <section class="contact-section">
@@ -138,51 +169,11 @@
   </button>
 
   <footer>
-    <p>© 2026 서비스 포털</p>
+    <p>© 2026 서비스 포털 | <a href="terms.html" style="color: white; text-decoration: underline;">이용약관</a> | <a
+        href="privacy.html" style="color: white; text-decoration: underline;">개인정보처리방침</a></p>
   </footer>
 
-  <script>
-    // 테마 관리
-    const THEME_KEY = 'mainTheme';
-
-    function getCurrentTheme() {
-      return localStorage.getItem(THEME_KEY) || 'light';
-    }
-
-    function setTheme(theme) {
-      document.documentElement.setAttribute('data-theme', theme);
-      localStorage.setItem(THEME_KEY, theme);
-      updateThemeIcon(theme);
-    }
-
-    function updateThemeIcon(theme) {
-      const themeIcon = document.getElementById('themeIcon');
-      if (themeIcon) {
-        themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
-      }
-    }
-
-    function toggleTheme() {
-      const currentTheme = getCurrentTheme();
-      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-      setTheme(newTheme);
-    }
-
-    function initializeTheme() {
-      const savedTheme = getCurrentTheme();
-      setTheme(savedTheme);
-    }
-
-    // 이벤트 리스너
-    document.addEventListener('DOMContentLoaded', () => {
-      initializeTheme();
-
-      const themeToggle = document.getElementById('themeToggle');
-      if (themeToggle) {
-        themeToggle.addEventListener('click', toggleTheme);
-      }
-    });
-  </script>
+  <script src="main.js" defer></script>
 </body>
 
 </html>

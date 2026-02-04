@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>페이지를 찾을 수 없습니다 - 서비스 포털</title>
+    <meta name="description" content="요청하신 페이지를 찾을 수 없습니다.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://yourwebsite.com/404.html">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .error-container {
+            text-align: center;
+            padding: 4rem 2rem;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        .error-title {
+            font-size: 2rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+        .error-message {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+        .error-suggestions {
+            background: var(--card-background);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            max-width: 600px;
+            margin: 2rem auto;
+            text-align: left;
+        }
+        .error-suggestions h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .error-suggestions ul {
+            list-style: none;
+            padding: 0;
+        }
+        .error-suggestions li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .error-suggestions li:last-child {
+            border-bottom: none;
+        }
+        .error-suggestions a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        .error-suggestions a:hover {
+            text-decoration: underline;
+        }
+        .error-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 5rem;
+            }
+            .error-title {
+                font-size: 1.5rem;
+            }
+            .error-message {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 네비게이션 바 -->
+    <nav role="navigation" aria-label="주 메뉴">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">🎯 서비스 포털</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">홈</a></li>
+                <li><a href="book-review.html" class="nav-link">독후감 기록</a></li>
+                <li><a href="zootopia.html" class="nav-link">닮은꼴 찾기</a></li>
+                <li><a href="about.html" class="nav-link">소개</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="error-container">
+            <div class="error-icon">🔍</div>
+            <div class="error-code">404</div>
+            <h1 class="error-title">페이지를 찾을 수 없습니다</h1>
+            <p class="error-message">
+                죄송합니다. 요청하신 페이지가 존재하지 않거나 이동되었을 수 있습니다.<br>
+                URL을 다시 확인하시거나 아래 링크를 통해 원하는 페이지로 이동해 주세요.
+            </p>
+
+            <div class="action-buttons">
+                <a href="index.html" class="btn btn-primary">홈으로 돌아가기</a>
+                <button onclick="history.back()" class="btn btn-secondary">이전 페이지</button>
+            </div>
+
+            <div class="error-suggestions">
+                <h3>이런 페이지는 어떠세요?</h3>
+                <ul>
+                    <li>📚 <a href="book-review.html">독후감 기록하기</a> - 읽은 책의 소감을 기록하세요</li>
+                    <li>🦊 <a href="zootopia.html">닮은꼴 찾기</a> - AI가 당신과 닮은 주토피아 캐릭터를 찾아드립니다</li>
+                    <li>📋 <a href="terms.html">이용약관</a> - 서비스 이용 규정 확인하기</li>
+                    <li>🔒 <a href="privacy.html">개인정보처리방침</a> - 개인정보 보호정책 확인하기</li>
+                </ul>
+            </div>
+
+            <p style="color: var(--text-light); margin-top: 2rem;">
+                계속해서 문제가 발생하면 <a href="index.html#contactForm" style="color: var(--primary-color);">문의하기</a>를 통해 알려주세요.
+            </p>
+        </div>
+    </main>
+
+    <!-- 테마 토글 버튼 -->
+    <button id="themeToggle" class="theme-toggle" aria-label="테마 전환">
+        <span id="themeIcon">🌙</span>
+    </button>
+
+    <footer>
+        <p>© 2026 서비스 포털 | <a href="index.html" style="color: white; text-decoration: underline;">홈으로</a> | <a href="terms.html" style="color: white; text-decoration: underline;">이용약관</a> | <a href="privacy.html" style="color: white; text-decoration: underline;">개인정보처리방침</a></p>
+    </footer>
+
+    <script>
+        // 테마 관리
+        const THEME_KEY = 'mainTheme';
+
+        function getCurrentTheme() {
+            return localStorage.getItem(THEME_KEY) || 'light';
+        }
+
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem(THEME_KEY, theme);
+            updateThemeIcon(theme);
+        }
+
+        function updateThemeIcon(theme) {
+            const themeIcon = document.getElementById('themeIcon');
+            if (themeIcon) {
+                themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+            }
+        }
+
+        function toggleTheme() {
+            const currentTheme = getCurrentTheme();
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            setTheme(newTheme);
+        }
+
+        function initializeTheme() {
+            const savedTheme = getCurrentTheme();
+            setTheme(savedTheme);
+        }
+
+        // 이벤트 리스너
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeTheme();
+
+            const themeToggle = document.getElementById('themeToggle');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', toggleTheme);
+            }
+        });
+    </script>
+</body>
+</html>
