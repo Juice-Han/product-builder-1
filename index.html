@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>독후감 기록 서비스</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>📚 독후감 기록 서비스</h1>
+        <p>읽은 책에 대한 소감을 기록하고 관리하세요</p>
+    </header>
+
+    <main>
+        <!-- 독후감 입력 폼 -->
+        <section class="form-section">
+            <h2 id="formTitle">새 독후감 작성</h2>
+            <form id="reviewForm">
+                <div class="form-group">
+                    <label for="title">책 제목 *</label>
+                    <input
+                        type="text"
+                        id="title"
+                        name="title"
+                        placeholder="책 제목을 입력하세요"
+                        maxlength="100"
+                        required
+                    >
+                    <span class="error-message" id="titleError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="author">저자 *</label>
+                    <input
+                        type="text"
+                        id="author"
+                        name="author"
+                        placeholder="저자명을 입력하세요"
+                        maxlength="100"
+                        required
+                    >
+                    <span class="error-message" id="authorError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="content">독후감 *</label>
+                    <textarea
+                        id="content"
+                        name="content"
+                        placeholder="책을 읽고 느낀 점을 자유롭게 작성하세요 (최소 10자)"
+                        rows="8"
+                        required
+                    ></textarea>
+                    <span class="error-message" id="contentError"></span>
+                </div>
+
+                <input type="hidden" id="editId" value="">
+
+                <div class="form-actions">
+                    <button type="submit" id="submitBtn" class="btn btn-primary">독후감 추가</button>
+                    <button type="button" id="cancelBtn" class="btn btn-secondary" style="display: none;">취소</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- 독후감 목록 -->
+        <section class="reviews-section">
+            <div class="reviews-header">
+                <h2>저장된 독후감</h2>
+                <div class="stats-bar">
+                    <span class="review-count">총 <strong id="reviewCount">0</strong>개</span>
+                    <button id="clearAllBtn" class="btn btn-danger" style="display: none;">전체 삭제</button>
+                </div>
+            </div>
+
+            <div id="reviewsList" class="reviews-list">
+                <!-- 독후감 카드들이 여기에 동적으로 추가됩니다 -->
+            </div>
+
+            <div id="emptyState" class="empty-state">
+                <p>아직 작성된 독후감이 없습니다.</p>
+                <p>첫 번째 독후감을 작성해보세요!</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 독후감 기록 서비스</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
