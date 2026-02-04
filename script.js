@@ -45,6 +45,10 @@ const resultSection = document.getElementById('result-section');
 const errorMessage = document.getElementById('error-message');
 const errorText = document.getElementById('error-text');
 const tryAgainButton = document.getElementById('try-again-button');
+const dropZoneText = document.querySelector('.drop-zone-text');
+const dropZoneHint = document.querySelector('.drop-zone-hint');
+
+let uploadEnabled = true;
 
 // Initialize when page loads
 window.addEventListener('load', async () => {
@@ -59,7 +63,8 @@ window.addEventListener('load', async () => {
 // Load Teachable Machine Model
 async function loadModel() {
     try {
-        showLoading('모델을 불러오는 중...');
+        setUploadEnabled(false, '모델을 불러오는 중입니다. 잠시만 기다려 주세요.');
+        showLoading('모델을 불러오는 중입니다...');
         const modelURL = MODEL_URL + "model.json";
         const metadataURL = MODEL_URL + "metadata.json";
 
@@ -67,11 +72,13 @@ async function loadModel() {
         maxPredictions = model.getTotalClasses();
 
         hideLoading();
+        setUploadEnabled(true);
         console.log('Model loaded successfully');
     } catch (error) {
         console.error('Error loading model:', error);
         showError('모델을 불러오는데 실패했습니다. 인터넷 연결을 확인해주세요.');
         hideLoading();
+        setUploadEnabled(true);
     }
 }
 
@@ -82,6 +89,7 @@ function setupEventListeners() {
     }
     // Upload button click
     uploadButton.addEventListener('click', (e) => {
+        if (!uploadEnabled) return;
         e.stopPropagation(); // Prevent event bubbling to dropZone
         fileInput.click();
     });
@@ -93,10 +101,12 @@ function setupEventListeners() {
 
     // Drag and drop events
     dropZone.addEventListener('click', () => {
+        if (!uploadEnabled) return;
         fileInput.click();
     });
 
     dropZone.addEventListener('dragover', (e) => {
+        if (!uploadEnabled) return;
         e.preventDefault();
         dropZone.classList.add('drag-over');
     });
@@ -106,6 +116,7 @@ function setupEventListeners() {
     });
 
     dropZone.addEventListener('drop', (e) => {
+        if (!uploadEnabled) return;
         e.preventDefault();
         dropZone.classList.remove('drag-over');
 
@@ -131,6 +142,34 @@ function hasRequiredElements() {
         errorText &&
         tryAgainButton
     );
+}
+
+function setUploadEnabled(enabled, statusMessage) {
+    if (!dropZone || !fileInput || !uploadButton) {
+        return;
+    }
+    uploadEnabled = enabled;
+    fileInput.disabled = !enabled;
+    uploadButton.disabled = !enabled;
+    dropZone.classList.toggle('is-disabled', !enabled);
+    dropZone.setAttribute('aria-disabled', String(!enabled));
+    dropZone.setAttribute('aria-busy', String(!enabled));
+
+    if (dropZoneText && dropZoneHint) {
+        if (!dropZoneText.dataset.defaultText) {
+            dropZoneText.dataset.defaultText = dropZoneText.textContent || '';
+        }
+        if (!dropZoneHint.dataset.defaultText) {
+            dropZoneHint.dataset.defaultText = dropZoneHint.textContent || '';
+        }
+        if (enabled) {
+            dropZoneText.textContent = dropZoneText.dataset.defaultText;
+            dropZoneHint.textContent = dropZoneHint.dataset.defaultText;
+        } else {
+            dropZoneText.textContent = '모델을 준비 중입니다';
+            dropZoneHint.textContent = statusMessage || '잠시만 기다려 주세요.';
+        }
+    }
 }
 
 // Handle File Selection
@@ -346,11 +385,17 @@ function getCharacterForPrediction(className) {
 function showLoading(message = 'Loading...') {
     loading.querySelector('p').textContent = message;
     loading.style.display = 'block';
+    if (dropZone) {
+        dropZone.classList.add('is-loading');
+    }
 }
 
 // Hide Loading
 function hideLoading() {
     loading.style.display = 'none';
+    if (dropZone) {
+        dropZone.classList.remove('is-loading');
+    }
 }
 
 // Show Error
