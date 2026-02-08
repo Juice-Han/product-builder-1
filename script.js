@@ -1,32 +1,32 @@
 // Teachable Machine Model URL
-const MODEL_URL = "https://teachablemachine.withgoogle.com/models/DVd_kQzJQ/";
+const MODEL_URL = "https://teachablemachine.withgoogle.com/models/RsY52bS8k/";
 
 // Animal Data (license-safe local assets)
 const characters = {
-    "Fox": {
-        image: "assets/character-fox.png",
-        nameKo: "여우",
-        nameEn: "Fox"
-    },
-    "Rabbit": {
+    "rabbit": {
         image: "assets/character-rabbit.png",
         nameKo: "토끼",
         nameEn: "Rabbit"
     },
-    "Owl": {
-        image: "assets/character-owl.png",
-        nameKo: "부엉이",
-        nameEn: "Owl"
+    "dog": {
+        image: "assets/character-dog.png",
+        nameKo: "강아지",
+        nameEn: "Dog"
     },
-    "Tiger": {
+    "cat": {
+        image: "assets/character-cat.png",
+        nameKo: "고양이",
+        nameEn: "Cat"
+    },
+    "fox": {
+        image: "assets/character-fox.png",
+        nameKo: "여우",
+        nameEn: "Fox"
+    },
+    "tiger": {
         image: "assets/character-tiger.png",
         nameKo: "호랑이",
         nameEn: "Tiger"
-    },
-    "Deer": {
-        image: "assets/character-deer.png",
-        nameKo: "사슴",
-        nameEn: "Deer"
     }
 };
 
@@ -363,8 +363,9 @@ function waitForResultAnimations(cardCount) {
 }
 
 function getCharacterForPrediction(className) {
-    if (characters[className]) {
-        return characters[className];
+    const normalizedName = className.toLowerCase();
+    if (characters[normalizedName]) {
+        return characters[normalizedName];
     }
 
     const fallbackKeys = Object.keys(characters);
