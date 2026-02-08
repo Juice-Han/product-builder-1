@@ -21,6 +21,45 @@
     <meta name="twitter:title" content="서비스 소개 | 동물 닮은꼴 테스트">
     <meta name="twitter:description" content="동물 닮은꼴 테스트 서비스 소개와 기술 스택을 안내합니다.">
     <meta name="twitter:image" content="https://juicehan.shop/assets/og-image.png">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://juicehan.shop/#organization",
+            "name": "동물 닮은꼴 테스트",
+            "url": "https://juicehan.shop/",
+            "logo": "https://juicehan.shop/assets/og-image.png"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://juicehan.shop/#website",
+            "name": "동물 닮은꼴 테스트",
+            "url": "https://juicehan.shop/",
+            "inLanguage": "ko",
+            "publisher": {
+              "@id": "https://juicehan.shop/#organization"
+            }
+          },
+          {
+            "@type": "AboutPage",
+            "@id": "https://juicehan.shop/about.html#aboutpage",
+            "url": "https://juicehan.shop/about.html",
+            "name": "서비스 소개 | 동물 닮은꼴 테스트",
+            "description": "동물 닮은꼴 테스트 서비스 소개와 기술 스택을 안내합니다.",
+            "inLanguage": "ko",
+            "isPartOf": {
+              "@id": "https://juicehan.shop/#website"
+            },
+            "about": {
+              "@id": "https://juicehan.shop/#organization"
+            },
+            "dateModified": "2026-02-08"
+          }
+        ]
+      }
+    </script>
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <!-- Google tag (gtag.js) -->
@@ -44,19 +83,11 @@
 <body>
     <div class="container">
         <header class="site-header">
+            <a href="index.html" class="back-link">← 홈으로</a>
             <div class="brand">
                 <h1>About</h1>
                 <p class="subtitle">동물 닮은꼴 테스트 소개</p>
             </div>
-            <nav class="site-nav" aria-label="주요 메뉴">
-                <a href="index.html">홈</a>
-                <a href="index.html#guide">서비스 소개</a>
-                <a href="index.html#faq">FAQ</a>
-                <a href="about.html" aria-current="page">About</a>
-                <a href="privacy.html">개인정보처리방침</a>
-                <a href="terms.html">이용약관</a>
-                <a href="contact.html">연락처</a>
-            </nav>
         </header>
 
         <main class="legal">
