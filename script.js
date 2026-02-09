@@ -1,5 +1,5 @@
 // Teachable Machine Model URL
-const MODEL_URL = "https://teachablemachine.withgoogle.com/models/RsY52bS8k/";
+const MODEL_URL = "https://teachablemachine.withgoogle.com/models/2vxN9KUe7/";
 
 // Animal Data (license-safe local assets)
 const characters = {
